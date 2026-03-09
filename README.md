@@ -1,6 +1,6 @@
 # Remote Compose Android Player
 
-The Android client for the [Remote Compose Demo](https://github.com/achatikyan/remotecompose) — a pure player app that downloads and renders server-driven UI using [AndroidX Remote Compose](https://developer.android.com/jetpack/androidx/releases/compose-remote).
+The Android client for the [Remote Compose Demo](https://github.com/armcha/remotecompose) — a pure player app that downloads and renders server-driven UI using [AndroidX Remote Compose](https://developer.android.com/jetpack/androidx/releases/compose-remote).
 
 <img src="app-screenshot.png" width="300" alt="App Screenshot">
 
@@ -75,6 +75,6 @@ Navigation between screens is driven by click actions in the Remote Compose docu
 
 ## Related
 
-- [remotecompose](https://github.com/achatikyan/remotecompose) — Web editor, JVM converter, JSON configs, and generated binary documents
-- [Live Editor](https://achatikyan.github.io/remotecompose/) — Drag-and-drop UI builder with live Compose/Wasm preview
+- [remotecompose](https://github.com/armcha/remotecompose) — Web editor, JVM converter, JSON configs, and generated binary documents
+- [Live Editor](https://armcha.github.io/remotecompose/) — Drag-and-drop UI builder with live Compose/Wasm preview
 - [Remote Compose documentation](https://github.com/androidx/androidx/tree/androidx-main/compose/remote/Documentation)
