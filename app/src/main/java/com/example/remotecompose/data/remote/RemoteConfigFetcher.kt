@@ -4,6 +4,7 @@ import com.example.remotecompose.BuildConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.CacheControl
+import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.util.concurrent.TimeUnit
@@ -17,14 +18,18 @@ object RemoteConfigFetcher {
 
     suspend fun fetchDocument(url: String): Result<ByteArray> = withContext(Dispatchers.IO) {
         try {
+            val isGitHubUrl = url.toHttpUrlOrNull()?.host == "api.github.com"
             val requestBuilder = Request.Builder()
                 .url(url)
                 .cacheControl(CacheControl.FORCE_NETWORK)
-                .header("Accept", "application/vnd.github.raw+json")
 
-            val token = BuildConfig.GITHUB_TOKEN
-            if (token.isNotEmpty()) {
-                requestBuilder.header("Authorization", "Bearer $token")
+            if (isGitHubUrl) {
+                requestBuilder.header("Accept", "application/vnd.github.raw+json")
+
+                val token = BuildConfig.GITHUB_TOKEN
+                if (token.isNotEmpty()) {
+                    requestBuilder.header("Authorization", "Bearer $token")
+                }
             }
 
             val response = client.newCall(requestBuilder.build()).execute()

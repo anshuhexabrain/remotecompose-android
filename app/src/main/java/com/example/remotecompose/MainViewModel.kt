@@ -38,7 +38,8 @@ data class MainUiState(
     }
 
     companion object {
-        private const val BASE = "https://api.github.com/repos/achatikyan/remotecompose/contents"
+        // Mac LAN IP serving the generated Remote Compose documents over HTTP.
+        private const val BASE = "http://192.168.0.13:8000"
 
         fun configUrlForScreen(screenId: String): String {
             return if (screenId == "home") "$BASE/config.rc"
