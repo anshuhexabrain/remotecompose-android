@@ -39,7 +39,7 @@ data class MainUiState(
 
     companion object {
         // Mac LAN IP serving the generated Remote Compose documents over HTTP.
-        private const val BASE = "http://192.168.0.13:8000"
+        private const val BASE = "http://192.168.0.105:8000"
 
         fun configUrlForScreen(screenId: String): String {
             return if (screenId == "home") "$BASE/config.rc"

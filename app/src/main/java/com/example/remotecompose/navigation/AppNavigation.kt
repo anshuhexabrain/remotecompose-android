@@ -15,7 +15,7 @@ fun AppNavigation() {
         composable("home") {
             RemoteScreen(
                 configUrl = MainUiState.configUrlForScreen("home"),
-                title = "Remote Compose",
+                title = "Sample App",
                 onNavigate = { route -> navController.navigate(route) }
             )
         }
